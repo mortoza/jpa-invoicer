@@ -1,0 +1,27 @@
+package org.example;
+
+import com.vaadin.ui.Component;
+import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.TextField;
+import org.example.backend.Product;
+import org.vaadin.viritin.fields.MTextField;
+import org.vaadin.viritin.form.AbstractForm;
+import org.vaadin.viritin.layouts.MVerticalLayout;
+
+public class ProductForm extends AbstractForm<Product> {
+
+    private TextField id = new MTextField("id");
+    private TextField name = new MTextField("name");
+
+    @Override
+    protected Component createContent() {
+        return new MVerticalLayout(
+                new FormLayout(
+                   id,
+                   name
+                ),
+                getToolbar()
+        );
+    }
+
+} 
